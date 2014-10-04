@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004162911) do
+ActiveRecord::Schema.define(version: 20141004171800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coverages", force: true do |t|
+    t.integer  "source_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "coverages", ["source_id"], name: "index_coverages_on_source_id", using: :btree
+  add_index "coverages", ["topic_id"], name: "index_coverages_on_topic_id", using: :btree
 
   create_table "sources", force: true do |t|
     t.string   "title",      null: false

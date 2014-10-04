@@ -12,7 +12,7 @@ class SourcesController < ApplicationController
     if @source.save
       redirect_to root_path
     else
-      render :self
+      render :new
     end
   end
 
