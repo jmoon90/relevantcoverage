@@ -13,6 +13,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'debugger', group: [:development, :test]
 
 #Added Gems
+
+group :development, :test do
+  gem 'pry-rails'
+end
+
+gem 'simple_form'
+gem 'foundation-rails'
