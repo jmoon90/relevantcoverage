@@ -5,6 +5,7 @@
   <%= f.input :time %>
   <%= f.input :date %>
   <%= f.input :image %>
+  <%= f.input :topic_id, collection: Topic.all, prompt: 'Please select'%>
 
   <%= f.button :submit %>
 <% end %>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root "sources#index"
+  root 'home#index'
 
+  resources :home, :only => [:index]
   resources :sources, :only => [:index, :new, :create]
-  resources :topics, :only => [:index, :show, :new, :create]
-  resources :coverages, :only => [:new, :create]
+  resources :topics, :only => [:index, :show, :new, :create] do
+  end
 end

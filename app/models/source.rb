@@ -4,4 +4,5 @@ class Source < ActiveRecord::Base
   validates_presence_of :publisher
   validates_presence_of :time
   validates_presence_of :date
+  validates_presence_of :topic_id
 end
