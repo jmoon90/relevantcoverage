@@ -19,7 +19,7 @@ class SourcesController < ApplicationController
   private
 
   def source_params
-    params_require(:source).permit(:title, :image, :link, :time, :date,
+    params.require(:source).permit(:title, :image, :link, :time, :date,
     :publisher)
   end
 end

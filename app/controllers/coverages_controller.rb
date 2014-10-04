@@ -12,10 +12,4 @@ class CoveragesController < ApplicationController
       render :new
     end
   end
-
-  private
-
-  def coverage_param
-    params_require(:coverage).permit(
-  end
 end
