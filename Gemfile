@@ -22,3 +22,7 @@ end
 
 gem 'simple_form'
 gem 'foundation-rails'
+
+gem 'devise', '~>3.2.2'
+gem "omniauth-google-oauth2"
+gem 'omniauth'

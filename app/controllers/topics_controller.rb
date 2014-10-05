@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @sources = @topic.sources.order(:date)
   end
 
   def new
