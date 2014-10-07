@@ -18,10 +18,30 @@
 
 .home {
   /* width: 1000px; */
-  height: 500px;
+  height: 600px;
   background-image: url("star.jpg") !important;
+  text-align: center;
 }
 
-.text-center {
+.demo-section {
+  height: 600px;
+}
 
+.home-button-size {
+  width: 250px;
+}
+
+.button-nav {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.plans-section {
+  height: 600px;
+}
+
+.topic-date {
+  border-width: 3px;
+  border-top-style: solid;
+  border-bottom-style: solid;
 }
