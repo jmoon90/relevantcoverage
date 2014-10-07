@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :home, :only => [:index]
   resources :sources, :only => [:index, :new, :create]
   resources :topics, :only => [:index, :show, :new, :create]
+  resources :accounts, :only => [:show]
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks",
     :registrations => "users/registrations"
   }
+
 end

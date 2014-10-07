@@ -1,0 +1,36 @@
+<dl class="tabs" data-tab>
+  <dd class="active"><a href="#panel1">Settings</a></dd>
+  <dd><a href="#panel2">Dashboard</a></dd>
+</dl>
+
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <div class='topic-settings'>
+      <h1>My Settings</h1>
+      <h4>Add New Topic</h4>
+      <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="small button dropdown">New Topic</button><br>
+      <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+        <% @topics.each do |topic| %>
+          <li><%= link_to topic.name, topic_path(topic) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class='email-settings'>
+      <h4>Email Settings</h4>
+      <input id="checkbox1" type="checkbox"><label for="checkbox1">Send me Daily Updates</label></br>
+      <input id="checkbox2" type="checkbox"><label for="checkbox2">Send me Instant Updates</label>
+    </div>
+
+    <div class='account-settings'>
+      <h4>Update Account</h4>
+      <p><%= link_to "Change Password", edit_user_registration_path %></p>
+
+      <p><%= link_to "Change Email", edit_user_registration_path %></p>
+    </div>
+  </div>
+
+  <div class="content" id="panel2">
+    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+  </div>
+</div>
