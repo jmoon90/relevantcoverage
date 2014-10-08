@@ -2,8 +2,14 @@
   <div class="small-12 columns">
     <%= simple_form_for @subscription do |f| %>
       <%= f.input :topic_id, collection: Topic.all, prompt: 'Please select'%>
-
-      <%= f.button :submit, "Purchase" %>
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_mDBpg4PvoPEMQA7noUoWGxO1"
+          data-amount="99"
+          data-name="Topic"
+          data-description="2 widgets ($0.99)"
+          data-image="/128x128.png">
+        </script>
     <% end %>
   </div>
 </div>
