@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :sources, :only => [:index, :new, :create]
   resources :topics, :only => [:index, :show, :new, :create]
   resources :accounts, :only => [:show]
+  resources :subscriptions, :only => [:new, :create]
+  resources :payments, :only => []
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks",

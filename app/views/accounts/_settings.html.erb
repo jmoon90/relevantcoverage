@@ -4,7 +4,7 @@
   <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="small button dropdown">New Topic</button><br>
   <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
     <% @topics.each do |topic| %>
-      <li><%= link_to topic.name, topic_path(topic) %></li>
+      <li><%= link_to topic.name, new_subscription_path %></li>
     <% end %>
   </ul>
 </div>
