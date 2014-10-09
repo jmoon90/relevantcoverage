@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
+  has_many :subscriptions,
+  inverse_of: :user
+
   def self.new_with_session(params, session)
     user_params = params.except('email', 'username')
 

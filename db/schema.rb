@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008014629) do
+ActiveRecord::Schema.define(version: 20141009022136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "sources", force: true do |t|
-    t.string   "title",      null: false
-    t.string   "link",       null: false
-    t.string   "time",       null: false
-    t.string   "date",       null: false
-    t.string   "publisher",  null: false
+    t.string   "title",          null: false
+    t.string   "link",           null: false
+    t.string   "time",           null: false
+    t.string   "publisher",      null: false
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "topic_id",   null: false
+    t.integer  "topic_id",       null: false
+    t.date     "published_date"
   end
 
   add_index "sources", ["topic_id"], name: "index_sources_on_topic_id", using: :btree
@@ -43,10 +43,13 @@ ActiveRecord::Schema.define(version: 20141008014629) do
   add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
   create_table "topics", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "subscription_id"
   end
+
+  add_index "topics", ["subscription_id"], name: "index_topics_on_subscription_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

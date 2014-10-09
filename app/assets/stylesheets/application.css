@@ -45,3 +45,27 @@
   border-top-style: solid;
   border-bottom-style: solid;
 }
+
+.top-bar {
+  height: 60px;
+  background-color: black;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  height: 60px;
+  background-color: black;
+}
+
+.navbar-logo{
+  background-image: url("logo1.jpg") !important;
+  background-repeat: no-repeat;
+  height: 60px !important;
+  width: 300px;
+}
+
+.logo {
+  height: 200px !important;
+  background-image: url("logo.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}

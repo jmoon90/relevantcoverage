@@ -2,8 +2,9 @@
   <h1>Dashboard</h1>
   <h5>My Topics</h5>
 
-  <!-- purchased_topics -->
-  <!-- purchased_topics -->
-  <!-- purchased_topics -->
-
+  <% @subscriptions.each do |subscription| %>
+    <% if subscription.respond_to?(:topic) && !subscription.topic.blank? %>
+      <%= link_to subscription.topic.name, topic_path(subscription.topic.id) %>
+    <% end %>
+  <% end %>
 </div>

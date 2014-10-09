@@ -3,4 +3,10 @@ class Topic < ActiveRecord::Base
 
   has_many :sources,
   inverse_of: :topic
+
+  has_many :subscriptions,
+  inverse_of: :topic
+
+  belongs_to :subscription,
+  inverse_of: :topic
 end

@@ -4,7 +4,8 @@
 
     <ul>
     <% @sources.each do |source| %>
-      <li><%= link_to source.title, source.link %> - <%= "#{source.publisher} - #{source.date}" %></li>
+      <li><%= link_to source.title, source.link %> - <%=
+      "#{source.publisher} - #{source.published_date}" %></li>
     <% end %>
     <ul>
   </div>
