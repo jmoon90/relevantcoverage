@@ -3,6 +3,7 @@
     <h1><%= @topic.name %></h1>
 
     <ul>
+      <li><%= link_to "Create new sources", new_source_path %></li>
     <% @sources.each do |source| %>
       <li><%= link_to source.title, source.link %> - <%=
       "#{source.publisher} - #{source.published_date}" %></li>

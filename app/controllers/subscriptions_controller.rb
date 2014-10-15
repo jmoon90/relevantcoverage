@@ -9,27 +9,26 @@ class SubscriptionsController < ApplicationController
     @subscription.user_id = current_user.id
     @subscription.topic_id = params[:subscription][:topic_id].to_i
 
-    if @subscription.save
-      Stripe.api_key = "sk_test_hLd4zEFQpy3cjREHvlfLlgHV"
-      token = params[:stripeToken]
-      begin
-        Stripe::Charge.create(
-          :amount => 99, # amount in cents, again
-          :currency => "usd",
-          :card => token,
-          :description => "payinguser@example.com"
-        )
-        flash[:notice] = "Your card has been charged"
-      rescue Stripe::CardError => e
-        flash[:notice] = "The card has been declined"
-        raise "The card has been declined"
-      end
+    if @subscription.save && !subscription_exists?
+      flash[:notice] = "You have successfully subscribed to #{Topic.find(@subscription.topic_id).name}"
       redirect_to account_path(current_user)
+    else
+      mssg = { :error => "There was an error. We could not subscribe you to #{Topic.find(@subscription.topic_id).name}" }
+      redirect_to account_path(current_user), :flash => mssg
     end
   end
 
   private
+
   def subscription_params
     params.require(:subscription).permit(:user_id, :topic_id)
+  end
+
+  def subscription_exists?
+    @topics = []
+    current_user.subscriptions.each do |n|
+      @topics << n.topic_id
+    end
+    @topics.include?(@subscription.topic_id)
   end
 end

@@ -7,4 +7,6 @@ class Subscription < ActiveRecord::Base
 
   belongs_to :topic,
   inverse_of: :subscriptions
+
+  validates_uniqueness_of :topic_id
 end
