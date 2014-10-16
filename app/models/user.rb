@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   has_many :subscriptions,
   inverse_of: :user
 
+  has_many :topics,
+  through: :subscriptions
+
   def self.new_with_session(params, session)
     user_params = params.except('email', 'username')
 

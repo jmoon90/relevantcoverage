@@ -1,5 +1,9 @@
 <ul>
 <% @topics.each do |topic| %>
-  <li><%= link_to topic.name, topic_path(topic) %></li>
+ <li><%= simple_form_for @subscription do |f| %>
+    <%= f.hidden_field :topic_id, :value => topic.id %>
+    <%= topic.name %>
+    <%= f.submit %>
+  <% end %></li>
 <% end %>
 </ul>

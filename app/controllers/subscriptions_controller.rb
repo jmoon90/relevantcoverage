@@ -9,7 +9,7 @@ class SubscriptionsController < ApplicationController
     @subscription.user_id = current_user.id
     @subscription.topic_id = params[:subscription][:topic_id].to_i
 
-    if @subscription.save && !subscription_exists?
+    if !subscription_exists? && @subscription.save
       flash[:notice] = "You have successfully subscribed to #{Topic.find(@subscription.topic_id).name}"
       redirect_to account_path(current_user)
     else

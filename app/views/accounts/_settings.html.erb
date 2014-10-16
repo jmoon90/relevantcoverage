@@ -1,7 +1,7 @@
 <div class='topic-settings'>
   <h1>My Settings</h1>
   <h4>Add New Topic</h4>
-  <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="small button dropdown">New Topic</button><br>
+  <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="small button dropdown">New Topics</button><br>
   <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
     <% @topics.each do |topic| %>
       <li><%= link_to topic.name, new_subscription_path %></li>
@@ -10,11 +10,11 @@
   </ul>
 </div>
 
-<div class='email-settings'>
-  <h4>Email Settings</h4>
-  <input id="checkbox1" type="checkbox"><label for="checkbox1">Send me Daily Updates</label></br>
-  <input id="checkbox2" type="checkbox"><label for="checkbox2">Send me Instant Updates</label>
-</div>
+<!-- <div class='email&#45;settings'> -->
+  <!-- <h4>Email Settings</h4> -->
+  <!-- <input id="checkbox1" type="checkbox"><label for="checkbox1">Send me Daily Updates</label></br> -->
+  <!-- <input id="checkbox2" type="checkbox"><label for="checkbox2">Send me Instant Updates</label> -->
+<!-- </div> -->
 
 <div class='account-settings'>
   <h4>Update Account</h4>

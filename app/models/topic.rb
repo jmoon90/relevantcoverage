@@ -9,4 +9,7 @@ class Topic < ActiveRecord::Base
 
   belongs_to :subscription,
   inverse_of: :topic
+
+  has_many :users,
+  through: :subscription
 end

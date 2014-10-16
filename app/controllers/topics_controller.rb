@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
+    @subscription = Subscription.new
   end
 
   def show
