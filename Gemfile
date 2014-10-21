@@ -27,6 +27,7 @@ gem 'devise', '~>3.2.2'
 gem "omniauth-google-oauth2"
 gem 'omniauth'
 
-#Payment
-gem 'stripe'
+#Security
+#Run brakeman in terminal to see vulnerabilities
+gem 'brakeman'
 
