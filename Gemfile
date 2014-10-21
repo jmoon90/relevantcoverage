@@ -31,3 +31,5 @@ gem 'omniauth'
 #Run brakeman in terminal to see vulnerabilities
 gem 'brakeman'
 
+#code analysis
+gem 'reek'

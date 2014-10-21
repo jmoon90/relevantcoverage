@@ -3,19 +3,23 @@
    <p>All Topics | <%= link_to "Create new topic", new_topic_path %></p>
   </div>
 </div>
+
 <div class='row'>
   <% @topics.each do |topic| %>
     <div class='medium-4 small-12 columns topics'>
       <li class='topic'>
         <%= simple_form_for @subscription do |f| %>
           <%= f.hidden_field :topic_id, :value => topic.id %>
-          <h4><%= topic.name %></h4>
+          <h4><%= link_to topic.name, topic_path(topic) %></h4>
 
-          <% if Topic.subscribed?(current_user, topic.id) %>
-            <p><%= f.submit "Subscribe" %></p>
-          <% else %>
-            <p>Already subscribed</p>
+          <% if user_signed_in? %>
+            <% if Topic.subscribed?(current_user, topic.id) %>
+              <p><%= f.submit "Subscribe" %></p>
+            <% else %>
+              <p>Already subscribed</p>
+            <% end %>
           <% end %>
+
         <% end %>
       </li>
     </div>
