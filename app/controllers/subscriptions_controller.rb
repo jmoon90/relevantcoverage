@@ -1,4 +1,6 @@
 class SubscriptionsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @subscription = Subscription.new
   end
@@ -6,7 +8,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new
 
-    @subscription.user_id = current_user.id
+    @subscription.user_id = current_user.try(:id)
     @subscription.topic_id = params[:subscription][:topic_id].to_i
 
     if !subscription_exists? && @subscription.save
@@ -26,9 +28,18 @@ class SubscriptionsController < ApplicationController
 
   def subscription_exists?
     @topics = []
-    current_user.subscriptions.each do |n|
-      @topics << n.topic_id
+    if current_user
+      current_user.subscriptions.each do |n|
+        @topics << n.topic_id
+      end
+      @topics.include?(@subscription.topic_id)
     end
-    @topics.include?(@subscription.topic_id)
+  end
+
+  def authenticate_user!
+    if !current_user
+      flash[:notice] = "You need to sign up in order to register to a topic"
+      redirect_to new_user_registration_path
+    end
   end
 end

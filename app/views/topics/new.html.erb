@@ -1,5 +1,11 @@
-<%= simple_form_for @topic do |f| %>
-  <%= f.input :name %>
+<div class='row'>
+  <div class='small-12 columns my_subscriptions'>
+    <%= simple_form_for @topic do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit %>
+    <% end %>
 
-  <%= f.button :submit %>
-<% end %>
+    <p>*Add new topic and get recognized</p>
+    <p>Last topic was created by <%= Topic.newest_topic_by_user %></p>
+  </div>
+</div>

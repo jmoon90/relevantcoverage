@@ -9,4 +9,5 @@ class Subscription < ActiveRecord::Base
   inverse_of: :subscriptions
 
   validates_uniqueness_of :topic_id
+  validates_presence_of :topic_id
 end
