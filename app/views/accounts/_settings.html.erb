@@ -1,5 +1,5 @@
 <div class='topic-settings'>
-  <h1>My <%= 'topic'.pluralize(@topics.size) %></h1>
+  <h1>My <%= "(#{@subscriptions.size})" %><%= ' topic'.pluralize(@topics.size) %></h1>
 
   <h4><%= link_to "Add New Topic",topics_path %></h4>
 </div>

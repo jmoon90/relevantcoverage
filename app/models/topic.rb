@@ -17,8 +17,8 @@ class Topic < ActiveRecord::Base
   has_many :users,
   through: :subscription
 
-  def self.subscribed?(current_user, topic_id)
-    !current_user.topics.select {|x| x.id == topic_id}.blank?
+  def self.subscribed?(current_user=nil, topic_id)
+    !current_user.topics.select {|x| x.id == topic_id}.blank? unless current_user == nil
   end
 
   def self.newest_topic_by_user

@@ -7,6 +7,11 @@
 
     <p>*Add new topic and get recognition. Connect your twitter account
     and we'll share your handle!</p>
-    <b>Last topic was created by <%= Topic.newest_topic_by_user %></b>
+    <% unless Topic.last.user.blank? %>
+      <b>Last topic was created by <%= Topic.newest_topic_by_user %></b>
+    <% else %>
+      <b>e.g) Last topic was created by <%= link_to 'John Moon',
+      'https://twitter.com/johnmoon6' %>. Thank John
+    <% end %>
   </div>
 </div>
