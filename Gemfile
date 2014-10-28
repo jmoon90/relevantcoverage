@@ -33,3 +33,5 @@ gem 'brakeman'
 
 #code analysis
 gem 'reek'
+gem 'newrelic_rpm'
+
