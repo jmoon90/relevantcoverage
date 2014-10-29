@@ -1,10 +1,14 @@
-<%= simple_form_for @source do |f| %>
-  <%= f.input :publisher %>
-  <%= f.input :title %>
-  <%= f.input :link %>
-  <%= f.input :published_date %>
-  <%= f.input :image %>
-  <%= f.input :topic_id, collection: Topic.all, prompt: 'Please select'%>
+<div class='row'>
+  <div class='small-12 columns my_subscriptions'>
+    <%= simple_form_for @source do |f| %>
+      <%= f.input :publisher %>
+      <%= f.input :title %>
+      <%= f.input :link %>
+      <%= f.input :published_date %>
+      <%= f.input :image %>
+      <%= f.input :topic_id, collection: Topic.all, prompt: 'Please select'%>
 
-  <%= f.button :submit %>
-<% end %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

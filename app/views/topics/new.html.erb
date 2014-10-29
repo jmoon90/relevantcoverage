@@ -10,8 +10,7 @@
     <% unless Topic.last.user.blank? %>
       <b>Last topic was created by <%= Topic.newest_topic_by_user %></b>
     <% else %>
-      <b>e.g) Last topic was created by <%= link_to 'John Moon',
-      'https://twitter.com/johnmoon6' %>. Thank John
+      <b>e.g) Last topic was created by <%= link_to 'John Moon', 'https://twitter.com/johnmoon6' %>. Thank John
     <% end %>
   </div>
 </div>
