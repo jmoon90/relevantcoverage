@@ -25,42 +25,42 @@ Topic.create([{name: "Ottawa memorial shooting"},
 topic = Topic.find_or_initialize_by(name: "Ottawa memorial shooting")
 Source.create([{title: 'The Parliament buildings in Canada were on lockdown this morning after reports of an active shooter at the Canadian War Memorial in Ottawa',
                 link: 'http://www.valuewalk.com/2014/10/ottawa-war-memorial-shooting/',
-                time: '10:22 am', publisher: 'ValueWalk', image: "",
+                publisher: 'ValueWalk', image: "",
                 topic_id: topic.id, published_date: 'October 22, 2014'},
 
                {title: 'Suspected shooter identified in Canada attack',
                 link: 'http://www.cnn.com/2014/10/22/world/americas/canada-ottawa-shooting/index.html',
-                time: '6:23 PM', publisher: 'CNN', image: nil, topic_id:
+                publisher: 'CNN', image: nil, topic_id:
                 topic.id, published_date: 'October 22, 2014'},
 
                {title: 'Masked gunman killed after Canadian soldier, Cpl. Nathan Cirillo, fatally shot at National War Memorial',
                link: 'http://news.nationalpost.com/2014/10/22/soldier-shot-outside-of-parliament-at-national-war-memorial-active-shooter-believed-to-be-on-the-loose/',
-               time: '5:22 PM', publisher: 'National Post', image: nil, topic_id:
+               publisher: 'National Post', image: nil, topic_id:
                topic.id, published_date: 'Oct 22, 2014'},
 
                {title: "Ottawa shootings: Bruce MacKinnon's cartoon is the perfect tribute to soldier Nathan Cirillo",
                link: 'http://www.independent.co.uk/news/world/americas/ottawa-shootings-bruce-mackinnons-cartoon-is-the-perfect-tribute-to-soldier-nathan-cirillo-shot-dead-at-war-memorial-9813993.html',
-               time: '1', publisher: 'independent uk', image: nil, topic_id: topic.id,
+               publisher: 'independent uk', image: nil, topic_id: topic.id,
                published_date: 'Thursday 23 October 2014'},
 
                {title: 'Ottawa shooting: Nurse Margaret Lerhe tried to save Nathan Cirillo',
                link: 'http://www.cbc.ca/news/canada/ottawa/ottawa-shooting-nurse-margaret-lerhe-tried-to-save-nathan-cirillo-1.2810699',
-               time: '1', publisher: 'cbc', image: nil, topic_id: topic.id,
+               publisher: 'cbc', image: nil, topic_id: topic.id,
                published_date: 'Oct 24, 2014'},
 
                {title: 'Ottawa War Memorial Shooting: 5 Fast Facts You Need to Know',
                link: 'http://heavy.com/news/2014/10/parliament-hill-shooting-ottawa-soldier-shooting/',
-               time: '1', publisher: 'heavy', image: nil, topic_id: topic.id,
+                publisher: 'heavy', image: nil, topic_id: topic.id,
                published_date: 'October 22, 2014'}
               ])
 
 topic = Topic.find_or_initialize_by(name: "Buffett loses $2 billion in 2 days")
 Source.create([{title: 'Warren Buffett loses $2 billion in two days',
                 link: 'http://money.cnn.com/2014/10/21/investing/warren-buffett-berkshire-lost-2-billion/',
-                time: '1', publisher: 'cnn', image: nil, topic_id: topic.id, published_date: 'October 21, 2014'},
+                publisher: 'cnn', image: nil, topic_id: topic.id, published_date: 'October 21, 2014'},
                {title: 'Warren Buffett loses $2 billion in 2 days on investments',
                link: 'http://www.upi.com/Business_News/2014/10/22/Warren-Buffett-loses-2-billion-in-2-days-on-investments/3661413992678/',
-               time: '1', publisher: 'UPI', image: nil, topic_id: topic.id,
+                publisher: 'UPI', image: nil, topic_id: topic.id,
                published_date: 'Oct. 22, 2014'}
                ])
 
