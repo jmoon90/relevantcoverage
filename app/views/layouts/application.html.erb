@@ -15,7 +15,7 @@
     <%= render 'partials/navbar' %>
 
     <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
+      <b><%= content_tag :div, msg, class: name %></b>
     <% end %>
 
     <%= yield %>

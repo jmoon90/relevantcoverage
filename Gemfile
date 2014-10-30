@@ -36,5 +36,5 @@ gem 'reek'
 gem 'newrelic_rpm'
 
 gem "mini_magick"
-gem 'fog'
+gem 'carrierwave-aws'
 gem 'carrierwave'
