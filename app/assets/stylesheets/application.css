@@ -97,3 +97,7 @@ ul.home-contacts {
   text-align: center;
   overflow:  auto;
 }
+
+.row {
+  max-width: 1200px !important;
+}

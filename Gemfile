@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
-#Added Gems
+#External Gems
 
 group :development, :test do
   gem 'pry-rails'
@@ -35,3 +35,5 @@ gem 'brakeman'
 gem 'reek'
 gem 'newrelic_rpm'
 
+gem 'fog'
+gem 'carrierwave'
