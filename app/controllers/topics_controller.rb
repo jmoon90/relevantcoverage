@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.user_id = current_user.id
-    @topic.image = topic_params[:image].original_filename unless topic_params[:image].blank?
+
     if @topic.save
       redirect_to topic_path(@topic.id)
     else
