@@ -35,11 +35,4 @@ class SubscriptionsController < ApplicationController
       @topics.include?(@subscription.topic_id)
     end
   end
-
-  def authenticate_user!
-    if !current_user
-      flash[:notice] = "You need to sign up in order to register to a topic"
-      redirect_to new_user_registration_path
-    end
-  end
 end

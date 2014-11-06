@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_filter :authenticate_user!, :only =>[:new]
+  before_filter :authenticate_user!, :only => [:new]
   def index
     @topics = Topic.all.order("created_at DESC")
     @subscription = Subscription.new
@@ -29,12 +29,5 @@ class TopicsController < ApplicationController
 
   def topic_params
     params.require(:topic).permit(:name, :user_id, :image)
-  end
-
-  def authenticate_user!
-    unless user_signed_in?
-      redirect_to new_user_registration_path
-      flash[:notice] = "You must sign in before you can post a new topic"
-    end
   end
 end

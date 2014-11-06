@@ -21,5 +21,5 @@ $(function(){ $(document).foundation(); });
 $(document).ready(function(){
   setTimeout(function(){
     $('.notice').remove();
-  }, 2500);
+  }, 3000);
  })
