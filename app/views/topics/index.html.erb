@@ -13,7 +13,7 @@
 
           <%= simple_form_for @subscription do |f| %>
             <%= f.hidden_field :topic_id, :value => topic.id %>
-            <h4><%= link_to topic.name, topic_path(topic) %></h4>
+            <h4><%= link_to topic.title, topic_path(topic) %></h4>
             <%= image_tag(Topic.default_image_path(topic)) if topic.image? %>
             <%= f.submit "Subscribe", class: "button tiny" %>
           <% end %>

@@ -9,7 +9,7 @@
     <div class='medium-4 small-12 columns my_subscriptions'>
       <% if subscription.respond_to?(:topic) && !subscription.topic.blank? %>
         <li class='my_subscription'>
-          <h4><%= link_to subscription.topic.name, topic_path(subscription.topic.id) %></h4>
+          <h4><%= link_to subscription.topic.title, topic_path(subscription.topic.id) %></h4>
             <%= image_tag(Topic.default_image_path(subscription.topic)) if subscription.topic.image? %>
 
           <p><%= pluralize(subscription.topic.sources.count, "source") %></p>

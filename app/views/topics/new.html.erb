@@ -1,7 +1,7 @@
 <div class='row'>
   <div class='small-12 columns my_subscriptions'>
     <%= simple_form_for @topic, :html => {:multipart => true} do |f| %>
-      <%= f.input :name %>
+      <%= f.input :title %>
       <%= f.file_field :image %>
       <%= f.button :submit %>
     <% end %>

@@ -12,10 +12,10 @@ class SubscriptionsController < ApplicationController
     @subscription.topic_id = params[:subscription][:topic_id].to_i
 
     if !subscription_exists? && @subscription.save
-      flash[:notice] = "You have successfully subscribed to #{Topic.find(@subscription.topic_id).name}"
+      flash[:notice] = "You have successfully subscribed to #{Topic.find(@subscription.topic_id).title}"
       redirect_to account_path(current_user)
     else
-      mssg = { :error => "There was an error. We could not subscribe you to #{Topic.find(@subscription.topic_id).name}" }
+      mssg = { :error => "There was an error. We could not subscribe you to #{Topic.find(@subscription.topic_id).title}" }
       redirect_to account_path(current_user), :flash => mssg
     end
   end

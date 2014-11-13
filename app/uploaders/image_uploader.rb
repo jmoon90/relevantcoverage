@@ -6,8 +6,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :aws
 
   def store_dir
-     model_name = model.title.downcase.tr(' ', "_")[0..20]
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}_#{model_name}"
+    unless model.respond_to?(:title)
+      model_title = model.title.downcase.tr(' ', "_")[0..20]
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}_#{model_title}"
+    end
   end
 
   # Fits thumb for full and mobile web
