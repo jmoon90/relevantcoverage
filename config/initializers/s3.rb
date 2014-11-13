@@ -9,6 +9,7 @@ CarrierWave.configure do |config|
 
   config.aws_credentials = {
     :access_key_id      => Rails.application.secrets.aws_access_key_id,
-    :secret_access_key  => Rails.application.secrets.aws_secret_access_key
+    :secret_access_key  => Rails.application.secrets.aws_secret_access_key,
+    :config => AWS.config(use_ssl: false)
   }
 end
