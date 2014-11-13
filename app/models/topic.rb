@@ -1,7 +1,7 @@
 class Topic < ActiveRecord::Base
   mount_uploader :image, ImageUploader
-  validates_presence_of :name
-  validates_uniqueness_of :name
+  validates_presence_of :title
+  validates_uniqueness_of :title
 
   has_many :sources,
   inverse_of: :topic
