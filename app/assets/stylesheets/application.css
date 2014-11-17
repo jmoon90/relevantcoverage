@@ -64,7 +64,7 @@
 
 .logo {
   height: 200px !important;
-  background-image: url("black_logo.png") !important;
+  background-image: url("https://s3.amazonaws.com/relevant-coverage/Transparent_Background.png") !important;
   background-position: center;
   background-repeat: no-repeat;
 }
